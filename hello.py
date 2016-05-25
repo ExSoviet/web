@@ -1,10 +1,6 @@
-def parse(text):
-    return text.replace('&', '\n')
-
-
 def app(environ, start_response):
     status = '200 OK'
     headers = [('Content-Type', 'text/plain')]
-    body = parse(environ['QUERY_STRING'])
+    body = environ['QUERY_STRING'].replace('&', '\n')
     start_response(status, headers)
-    return [body]
+    return iter[body]
