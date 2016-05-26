@@ -3,4 +3,4 @@ def app(environ, start_response):
     headers = [('Content-Type', 'text/plain')]
     body = environ['QUERY_STRING'].replace('&', '\n')
     start_response(status, headers)
-    return iter[body]
+    return [body]
